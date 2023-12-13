@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="dao.DAO"/>
+    <fullyQualifiedTypeName name="javax.swing.table.DefaultTableModel"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="dao.LoaihaisanDAO"/>
+    <fullyQualifiedTypeName name="model.Loaihaisan"/>
+    <fullyQualifiedTypeName name="model.Haisan"/>
+    <fullyQualifiedTypeName name="javax.swing.table.TableColumn"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="dao.HaisanDAO"/>
+</qualifiedTypeNameHistroy>

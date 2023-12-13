@@ -1,0 +1,138 @@
+package gui;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JScrollBar;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.JCheckBox;
+import javax.swing.JButton;
+
+public class formHaisan extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtMa;
+	private JTextField txtTen;
+	private JTextField txtXuatXu;
+	private JTextField txtDVT;
+	
+	DefaultTableModel model = new DefaultTableModel();
+	List<Loaihaisan> dsLoaiHaiSan = new ArrayList<Loaihaisan>();
+	LoaihaisanDAO daoLoaiHaiSan = new LoaihaisanDAO();
+	List<Haisan> dsHS = new ArrayList<Haisan>();
+	HaisanDAO daoHS = new HaisanDAO();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					formHaisan frame = new formHaisan();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public formHaisan() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 374, 334);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JScrollBar scrollBar = new JScrollBar();
+		scrollBar.setBounds(5, 181, 342, 104);
+		contentPane.add(scrollBar);
+		
+		JLabel lblNewLabel = new JLabel("QU\u1EA2N L\u00DD H\u1EA2I S\u1EA2N");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
+		lblNewLabel.setBounds(5, 10, 342, 35);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("M\u00E3:");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_1.setBounds(5, 55, 29, 13);
+		contentPane.add(lblNewLabel_1);
+		
+		txtMa = new JTextField();
+		txtMa.setBounds(29, 53, 64, 19);
+		contentPane.add(txtMa);
+		txtMa.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("T\u00EAn:");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_2.setBounds(103, 55, 29, 13);
+		contentPane.add(lblNewLabel_2);
+		
+		txtTen = new JTextField();
+		txtTen.setBounds(142, 53, 205, 19);
+		contentPane.add(txtTen);
+		txtTen.setColumns(10);
+		
+		JLabel lblNewLabel_3 = new JLabel("Xu\u1EA5t x\u1EE9:");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_3.setBounds(5, 93, 55, 13);
+		contentPane.add(lblNewLabel_3);
+		
+		txtXuatXu = new JTextField();
+		txtXuatXu.setBounds(58, 91, 85, 19);
+		contentPane.add(txtXuatXu);
+		txtXuatXu.setColumns(10);
+		
+		JLabel lblNewLabel_4 = new JLabel("\u0110\u01A1n v\u1ECB t\u00EDnh:");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_4.setBounds(164, 93, 64, 13);
+		contentPane.add(lblNewLabel_4);
+		
+		txtDVT = new JTextField();
+		txtDVT.setBounds(238, 90, 109, 19);
+		contentPane.add(txtDVT);
+		txtDVT.setColumns(10);
+		
+		JLabel lblNewLabel_5 = new JLabel("Lo\u1EA1i h\u1EA3i s\u1EA3n:");
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_5.setBounds(5, 127, 65, 13);
+		contentPane.add(lblNewLabel_5);
+		
+		JComboBox cbbLHS = new JComboBox();
+		cbbLHS.setBounds(80, 123, 93, 21);
+		contentPane.add(cbbLHS);
+		
+		JCheckBox cbTuoiSong = new JCheckBox("T\u01B0\u01A1i s\u1ED1ng");
+		cbTuoiSong.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		cbTuoiSong.setBounds(210, 123, 93, 21);
+		contentPane.add(cbTuoiSong);
+		
+		JButton btnThem = new JButton("Th\u00EAm");
+		btnThem.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnThem.setBounds(140, 150, 65, 21);
+		contentPane.add(btnThem);
+		
+		JButton btnXoa = new JButton("X\u00F3a");
+		btnXoa.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnXoa.setBounds(210, 150, 63, 21);
+		contentPane.add(btnXoa);
+		
+		JButton btnSua = new JButton("S\u1EEDa");
+		btnSua.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnSua.setBounds(283, 150, 64, 21);
+		contentPane.add(btnSua);
+	}
+}
